@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "MathTraining Content Remover",
+    "version": "1.0",
+    "description": "Removes all the answers on mathraining.be to train again if needed",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.mathraining.be/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "icons": {
+        "48": "icon.png"
+    }
+}
