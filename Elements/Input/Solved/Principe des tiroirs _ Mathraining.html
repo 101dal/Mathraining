@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://www.mathraining.be/chapters/6?type=5&which=158 -->
+<html data-bs-theme="light" class=" gmzwgpzl idc0_350"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+  <script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'] ],
+        processEscapes: true
+      },
+      "HTML-CSS": {
+        mtextFontInherit: true,
+        linebreaks: { automatic: true }
+      },
+      CommonHTML: {
+        linebreaks: { automatic: true }
+      },
+      SVG: {
+        linebreaks: { automatic: true }
+      },
+      messageStyle: "simple" 
+    })
+    </script>
+    
+    <!-- NB: With MathJax 2.7.1. (current) we had to implement this manual bug fix: https://github.com/mathjax/MathJax/issues/2005 -->
+    <!-- We tried using MathJax 2.7.5 that is supposed to contain the bug fix, but it creates other issues: -->
+    <!-- When typing 'On a $(a,b)=1$' in a form, the preview is broken -->
+    
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+    
+    <!-- Fix for the bug on Safari/IOS (missing text) -->
+    <script type="text/x-mathjax-config;executed=true">
+    MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready", function () {
+      var HTMLCSS = MathJax.OutputJax["HTML-CSS"];
+      var postTranslate = HTMLCSS.postTranslate;
+      HTMLCSS.Augment({
+        postTranslate: function (state, partial) {
+          var scripts = state.jax[this.id];
+          for (var i = state.HTMLCSSlast, m = state.HTMLCSSeqn; i < m; i++) {
+            var script = scripts[i];
+            if (script && script.parentNode && script.MathJax.elementJax) {
+              if (script.MathJax.preview) {
+                script.MathJax.preview.innerHTML = "";
+                delete script.MathJax.preview;
+              }
+            }
+          }
+          postTranslate.call(this, state, partial);
+        }
+      });
+    });
+    MathJax.Hub.Register.StartupHook("CommonHTML Jax Ready", function () {
+      var CHTML = MathJax.OutputJax.CommonHTML;
+      var postTranslate = CHTML.postTranslate;
+      CHTML.Augment({
+        postTranslate: function (state) {
+          var scripts = state.jax[this.id];
+          for (var i = state.CHTMLlast, m = state.CHTMLeqn; i < m; i++) {
+            var script = scripts[i];
+            if (script && script.MathJax.elementJax) {
+              var data = script.MathJax.elementJax.CHTML;
+              if (data.preview) {
+                data.preview.innerHTML = "";
+                delete data.preview;
+              }
+            }
+          }
+          postTranslate.call(this, state);
+        }
+      });
+    });
+    </script>
+    
+    <script type="text/javascript" src="./Principe des tiroirs _ Mathraining_files/MathJax.js.télécharger"></script>
+    
+      <!-- Google tag (gtag.js) -->
+      <script async="" src="./Principe des tiroirs _ Mathraining_files/js"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FZ7Q2MRZ89', {'theme': 'light'});
+      </script>
+    <title>Principe des tiroirs | Mathraining</title>
+    <script type="application/ld+json">
+      {
+        "@context" : "https://schema.org",
+        "@type" : "WebSite",
+        "name" : "Mathraining",
+        "url" : "https://www.mathraining.be/"
+      }
+    </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.mathraining.be/icon-57.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.mathraining.be/icon-76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://www.mathraining.be/icon-120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.mathraining.be/icon-152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="https://www.mathraining.be/icon-167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.mathraining.be/icon-180.png">
+    <link rel="icon" sizes="192x192" href="https://www.mathraining.be/icon-192.png">
+    <link rel="icon" sizes="128x128" href="https://www.mathraining.be/icon-128.png">
+    
+    <link rel="stylesheet" href="./Principe des tiroirs _ Mathraining_files/application-b14fa8438134b11d730a919c0de103c67128a33a3ce42ee7eafeffc61df65a43.css" media="screen, projection">
+    <link rel="stylesheet" href="./Principe des tiroirs _ Mathraining_files/application-print-8e3222068d89983b1c7f1faabd81b38abcdf21e85da974f0d2d888dfd7ec5bde.css" media="print">
+    
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="2GVyWW56GeAlxya5Ed-L9hgpqVz345T7SRf7j9YXxHeSH3HPkxBIvWcPXxkflEYaDx03mg-PPWeU-vFNkSiylQ">
+
+    
+    <!-- For Google Search Console -->
+    <meta name="google-site-verification" content="hxNpvWtQioPx3-dn2C2-oTX1RVEvfkwXZrKrUz5FIIw">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-b708775b814bc9e1b4400e44c042f96dc3b6cf580cbfb96269518c85093133de.js",
+    "popper": "/assets/popper-87fc176bb54a8b0633ccd09546f8d5f5ef8a594451dede53a1b503e7548d1e2b.js",
+    "bootstrap": "/assets/bootstrap.min-e6493e7d988aa24dbf192a7344f44da06fa16b32ea85a528f5fae4fe20cc901c.js",
+    "jquery": "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js",
+    "jquery_ui": "https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.js",
+    "jquery_ujs": "/assets/jquery_ujs-a6375ab2b275439c922ac52b02a475d288976458aa11a6e8103c925ef2961f66.js",
+    "select2": "https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js",
+    "select2_locale_fr": "/assets/select2_locale_fr-2ed5005174ce220064dd7edceb06256376d8a3640f202ae830fac4661f7d0d67.js",
+    "custom/clue": "/assets/custom/clue-ff0d368346ee4e5b382f6a491d0cdf3ab9b3ab693ab9160946f8242bce9d4e18.js",
+    "custom/info": "/assets/custom/info-6ea2242741a581370f9b352675f485382735ee6e3040f9e9c4e99bd810fbf2f1.js",
+    "custom/join": "/assets/custom/join-10cac91af6075bb4c6feecc38e216a65cefd38362a866cd94243b70403b0e467.js",
+    "custom/preview": "/assets/custom/preview-0393a2a41a5e88fb0555065acf8df3c238fe7058d38f7f5a100db6ef1aae074e.js",
+    "custom/previewsafe": "/assets/custom/previewsafe-f86fec417cee27e3351464975106538fc4157c1bc14e56623b248ef55bba4bb8.js",
+    "custom/rolling": "/assets/custom/rolling-5c35ad7099ddc963c67b128817307ddac019cb1c7242e661d6f8859cc1412221.js",
+    "custom/showcode": "/assets/custom/showcode-9df7020b4de5ae6c54d7652b5a72377501cefff2684bbd2f740ca7ba1c4e6ef4.js",
+    "custom/springy": "/assets/custom/springy-153e6a2324b9fb36fde959b03612ebb0cfa7ceac0d24497bbcc0fb8a9d97a374.js",
+    "custom/springyui": "/assets/custom/springyui-88bcfb9ab31a3dd84a7c23d07b32299e2f83437ee258645551277398bb4122b7.js",
+    "custom/tainsert": "/assets/custom/tainsert-de2d6d3253380e56a69bbe036fa5e85a581e84a8f8714f1a2a5db9787bd6e5ea.js"
+  }
+}</script>
+<link rel="modulepreload" href="https://www.mathraining.be/assets/application-b708775b814bc9e1b4400e44c042f96dc3b6cf580cbfb96269518c85093133de.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/popper-87fc176bb54a8b0633ccd09546f8d5f5ef8a594451dede53a1b503e7548d1e2b.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/bootstrap.min-e6493e7d988aa24dbf192a7344f44da06fa16b32ea85a528f5fae4fe20cc901c.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/dist/jquery-ui.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/jquery_ujs-a6375ab2b275439c922ac52b02a475d288976458aa11a6e8103c925ef2961f66.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/select2_locale_fr-2ed5005174ce220064dd7edceb06256376d8a3640f202ae830fac4661f7d0d67.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/clue-ff0d368346ee4e5b382f6a491d0cdf3ab9b3ab693ab9160946f8242bce9d4e18.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/info-6ea2242741a581370f9b352675f485382735ee6e3040f9e9c4e99bd810fbf2f1.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/join-10cac91af6075bb4c6feecc38e216a65cefd38362a866cd94243b70403b0e467.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/preview-0393a2a41a5e88fb0555065acf8df3c238fe7058d38f7f5a100db6ef1aae074e.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/previewsafe-f86fec417cee27e3351464975106538fc4157c1bc14e56623b248ef55bba4bb8.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/rolling-5c35ad7099ddc963c67b128817307ddac019cb1c7242e661d6f8859cc1412221.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/showcode-9df7020b4de5ae6c54d7652b5a72377501cefff2684bbd2f740ca7ba1c4e6ef4.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/springy-153e6a2324b9fb36fde959b03612ebb0cfa7ceac0d24497bbcc0fb8a9d97a374.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/springyui-88bcfb9ab31a3dd84a7c23d07b32299e2f83437ee258645551277398bb4122b7.js">
+<link rel="modulepreload" href="https://www.mathraining.be/assets/custom/tainsert-de2d6d3253380e56a69bbe036fa5e85a581e84a8f8714f1a2a5db9787bd6e5ea.js">
+<script src="./Principe des tiroirs _ Mathraining_files/es-module-shims.min-a6301aad9b0b2a561b024753a7c8634a951e359f1a6c5c1974085e7342b6b5c6.js.télécharger" async="async" data-turbo-track="reload"></script>
+<script type="module">import "application"</script>
+    <script type="text/javascript">
+    
+      function callMethodWhenPossible(method) {
+        method();
+        ["DOMContentLoaded", "load", "importmap-scripts-loaded"].forEach(function(e){
+          window.addEventListener(e, () => {
+            method();
+          });
+        });
+      }
+    
+      // To initialize and update Preview when page is loaded and Preview is defined
+      var initAndUpdatePreviewDone = false;
+      
+      function initAndUpdatePreviewIfPossible() {
+        if ("Preview" in window) {
+          if (!initAndUpdatePreviewDone) {
+            initAndUpdatePreviewDone = true;
+            Preview.Init();
+            Preview.Update();
+          }
+        }
+      }
+    
+      function initAndUpdatePreviewWhenPossible() {
+        callMethodWhenPossible(initAndUpdatePreviewIfPossible);
+      }
+      
+      // To initialize and update PreviewSafe when page is loaded and PreviewSafe is defined
+      var initAndUpdatePreviewSafeDone = false;
+      
+      function initAndUpdatePreviewSafeIfPossible(disableBBCode, enableHiddenText) {
+        if ("PreviewSafe" in window) {
+          if (!initAndUpdatePreviewSafeDone) {
+            initAndUpdatePreviewSafeDone = true;
+            PreviewSafe.Init();
+            if (disableBBCode) {
+              PreviewSafe.SetBBCode(false);
+            }
+            if (!enableHiddenText) {
+              PreviewSafe.SetHiddenText(false);
+            }
+            PreviewSafe.Update();
+          }
+        }
+      }
+      
+      function initAndUpdatePreviewSafeWhenPossible(disableBBCode = false, enableHiddenText = false) {
+        callMethodWhenPossible(() => initAndUpdatePreviewSafeIfPossible(disableBBCode, enableHiddenText));
+      }
+      
+      // To call Rolling.develop_quick when page is loaded and Rolling is defined
+      var rollingDevelopQuickDone = false;
+      
+      function rollingDevelopQuickIfPossible(m, enableHiddenText) {
+        if ("Rolling" in window) {
+          if (!rollingDevelopQuickDone) {
+            rollingDevelopQuickDone = true;
+            Rolling.develop_quick(m, enableHiddenText);
+          }
+        }
+      }
+    
+      function rollingDevelopQuickWhenPossible(m, enableHiddenText = false) {
+        callMethodWhenPossible(() => rollingDevelopQuickIfPossible(m, enableHiddenText));
+      }
+      
+      // To call Rolling.showus when page is loaded and Rolling is defined
+      var rollingShowusDone = false;
+      
+      function rollingShowusIfPossible(m) {
+        if ("Rolling" in window) {
+          if (!rollingShowusDone) {
+            rollingShowusDone = true;
+            Rolling.showus(m);
+          }
+        }
+      }
+    
+      function rollingShowusWhenPossible(m) {
+        callMethodWhenPossible(() => rollingShowusIfPossible(m));
+      }
+      
+      // To initialize select2 when page is loaded and $ (jquery) is defined
+      var select2Initialized = false;
+      
+      function initializeSelect2IfPossible(placeholder) {
+        if ("$" in window) {
+          if (!select2Initialized) {
+            select2Initialized = true;
+            $('.select2').select2({
+              theme: "bootstrap-5",
+              language: "fr",
+              width: "300",
+              placeholder: placeholder
+            });
+          }
+        }
+      }
+      
+      function initializeSelect2WhenPossible(placeholder) {
+        callMethodWhenPossible(() => initializeSelect2IfPossible(placeholder));
+      }
+      
+    </script>
+  <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+  
+  <body data-new-gr-c-s-check-loaded="14.1072.0" data-gr-ext-installed=""><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+    <link rel="icon" type="image/x-icon" href="https://www.mathraining.be/favicon.ico">
+
+<div class="noprint">
+
+<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+  <div class="container">
+    <!-- Lien Mathraining -->
+    <a class="navbar-brand me-4" style="font-size:24px;" id="Accueil" href="https://www.mathraining.be/">
+      <span class="text-color-black-white">Math</span><span class="text-color-mt-blue">raining</span>
+</a>    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+      <!-- Boutons en haut à gauche -->
+      <form>
+      
+      
+      <!-- Corrections (pour les étudiants non-correcteurs) -->
+      
+      </form>
+
+
+      <ul class="navbar-nav ms-auto navbar-nav-scroll pe-3 pe-lg-0" style="--bs-scroll-height: 350px;">
+        
+
+        <!-- Cours -->
+        <li class="nav-item dropdown me-1">
+          <a class="nav-link dropdown-toggle" href="https://www.mathraining.be/chapters/6?type=5&amp;which=158#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Théorie
+          </a>
+          <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://www.mathraining.be/sections/7">Fondements</a></li>
+            <li class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/sections/1">Combinatoire</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/sections/2">Géométrie</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/sections/3">Théorie des nombres</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/sections/4">Algèbre</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/sections/5">Équations fonctionnelles</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/sections/6">Inégalités</a></li>
+          </ul>
+        </li>
+
+        <!-- Problèmes -->
+        <li class="nav-item dropdown me-1">
+          <a class="nav-link dropdown-toggle" href="https://www.mathraining.be/chapters/6?type=5&amp;which=158#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            Problèmes
+          </a>
+          <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://www.mathraining.be/pb_sections/1">Combinatoire</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/pb_sections/2">Géométrie</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/pb_sections/3">Théorie des nombres</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/pb_sections/4">Algèbre</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/pb_sections/5">Équations fonctionnelles</a></li>
+                <li><a class="dropdown-item" href="https://www.mathraining.be/pb_sections/6">Inégalités</a></li>
+            <li class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://www.mathraining.be/virtualtests">Tests virtuels</a></li>
+            <li><a class="dropdown-item" href="https://www.mathraining.be/contests">Concours</a></li>
+          </ul>
+        </li>
+
+        <!-- Forum -->
+          
+          <li class="nav-item me-1">
+          <a class="nav-link " href="https://www.mathraining.be/subjects">
+            Forum
+</a>          </li>
+
+        <!-- Statistiques -->
+        <li class="nav-item dropdown me-1">
+        <a class="nav-link dropdown-toggle" href="https://www.mathraining.be/chapters/6?type=5&amp;which=158#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+          Statistiques
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://www.mathraining.be/users">Scores</a></li>
+          <li><a class="dropdown-item" href="https://www.mathraining.be/solvedproblems">Résolutions récentes</a></li>
+          <li><a class="dropdown-item" href="https://www.mathraining.be/correctors">Corrections</a></li>
+          <li><a class="dropdown-item" href="https://www.mathraining.be/chapterstats">Difficulté des chapitres</a></li>
+          <li><a class="dropdown-item" href="https://www.mathraining.be/stats">Statistiques diverses</a></li>
+        </ul>
+        </li>
+
+        <!-- Menu déroulant -->
+
+        <!-- Si connecté -->
+
+
+
+          <li class="nav-item dropdown">
+
+          <!-- Nom -->
+          <a class="nav-link dropdown-toggle fw-bold" href="https://www.mathraining.be/chapters/6?type=5&amp;which=158#" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+            <span class="fw-bold" style="color:#0033FF;">Augustin Michez</span>
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="https://www.mathraining.be/users/21872">Profil</a></li>
+            <li><a class="dropdown-item" href="https://www.mathraining.be/users/21872/edit">Compte</a></li>
+            <li><a class="dropdown-item" href="https://www.mathraining.be/discussions/new">Messages</a></li>
+            <li class="dropdown-divider"></li>
+            <li>
+            <a class="dropdown-item" rel="nofollow" data-method="delete" href="https://www.mathraining.be/signout">Déconnexion</a>
+            </li>
+          </ul>
+          </li>
+
+        <!-- Si pas connecté -->
+
+      </ul>
+
+    </div> <!-- collapse -->
+  </div> <!-- container -->
+</nav>
+
+</div>
+
+
+    <div class="container">
+      
+
+<h1><span class="title-first noprint">Théorie &gt;</span> <span class="title-second noprint"><a href="https://www.mathraining.be/sections/1">Combinatoire</a> &gt;</span> <span class="title-true">Principe des tiroirs</span></h1>
+
+<div class="grid mt-3 mx-0" style="--bs-columns: 12;">
+
+  <!-- MENU -->
+  <div class="g-col-12 g-col-md-3 g-col-xl-2 noprint list-group">
+    <h5>Général</h5>
+    <a class="list-group-item list-group-item-action " href="https://www.mathraining.be/chapters/6">Résumé</a>
+    <a class="list-group-item list-group-item-action " href="https://www.mathraining.be/chapters/6?type=10">Chapitre entier</a>
+    <a class="list-group-item list-group-item-action" target="_blank" href="https://www.mathraining.be/subjects?q=6">Forum</a>
+
+    <!-- Points théoriques -->
+          <h5 class="mt-3">Points théoriques</h5>
+        
+        
+        
+          
+        <a class="list-group-item list-group-item-action list-group-item-success " href="https://www.mathraining.be/chapters/6?type=1&amp;which=26">Idée intuitive</a>
+
+        
+        
+        
+          
+        <a class="list-group-item list-group-item-action list-group-item-success " href="https://www.mathraining.be/chapters/6?type=1&amp;which=27">Énoncés</a>
+
+        
+        
+        
+          
+        <a class="list-group-item list-group-item-action list-group-item-success " href="https://www.mathraining.be/chapters/6?type=1&amp;which=30">Exemples d'application</a>
+
+
+    <!-- Peut-on voir les exercices? -->
+
+    <!-- Exercices -->
+
+          <h5 class="mt-3">Exercices</h5>
+
+
+            
+          <a class="list-group-item list-group-item-action list-group-item-success active" href="https://www.mathraining.be/chapters/6?type=5&amp;which=158">Exercice 1</a>
+
+
+
+            
+          <a class="list-group-item list-group-item-action list-group-item-success " href="https://www.mathraining.be/chapters/6?type=5&amp;which=122">Exercice 2</a>
+
+
+
+            
+          <a class="list-group-item list-group-item-action list-group-item-success " href="https://www.mathraining.be/chapters/6?type=5&amp;which=130">Exercice 3</a>
+
+
+
+            
+          <a class="list-group-item list-group-item-action list-group-item-success " href="https://www.mathraining.be/chapters/6?type=5&amp;which=116">Exercice 4</a>
+      
+  </div>
+    
+  <div class="g-col-12 g-col-md-9 g-col-xl-10">
+  
+    <div class="mt-3 d-md-none"></div>
+
+    <!-- RESUME -->
+
+
+    <!-- CHAPITRE ENTIER -->
+
+
+    <!-- POINTS THEORIQUES -->
+
+
+    <!-- QUESTIONS -->
+
+        <!-- Titre -->
+
+
+<h3>Exercice 1
+<span class="ms-3 text-color-grey">(3&nbsp;points)</span>
+
+  <span class="d-none d-lg-inline ms-3" style="font-size:20px; color:rgb(89,145,0);">(Résolu <b>9787</b> fois - <b>46%</b> de réussite au premier essai)</span>
+  <br class="d-inline d-lg-none">
+  <span class="d-inline d-lg-none mb-1" style="font-size:20px; color:rgb(89,145,0);">(Résolu <b>9787</b> fois - <br class="visible-xs"> <b>46%</b> de  réussite au 1<sup>er</sup> essai)</span>
+</h3>
+
+
+<!-- Enoncé -->
+<div>
+  Combien d'enfants faut-il au minimum dans une école pour que l'on soit sûr que <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0.598em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1000.42em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mn" id="MathJax-Span-3" style="font-family: MathJax_Main;">3</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn></math></span></span><script type="math/tex" id="MathJax-Element-1">3</script> d'entre eux au moins aient leur anniversaire le même jour ? (Rappelons que certaines personnes naissent un 29 février.)
+</div>
+
+<!-- Si administrateur -->
+
+  
+  <!-- Si l'exercice est déjà résolu -->
+    <p class="mt-3 fw-bold text-color-green">
+      Vous avez résolu cet exercice après 4 erreurs.
+    </p>
+    
+    <!-- Réponse -->
+    <h4 class="mt-4">Réponse</h4>
+      <!-- pas QCM -->
+    <p><span style="font-size:16px;">733</span> (On demande une réponse <b>entière</b>)</p>
+
+    
+    <!-- Explication -->
+      <h4 class="mt-4">Explication</h4>
+      Par le principe des tiroirs, si au moins <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;733&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-4" style="width: 1.789em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.491em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1001.43em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="mn" id="MathJax-Span-6" style="font-family: MathJax_Main;">733</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>733</mn></math></span></span><script type="math/tex" id="MathJax-Element-2">733</script> enfants sont présents dans l'école et qu'on les divise dans <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;366&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-7" style="width: 1.789em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.491em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1001.43em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-8"><span class="mn" id="MathJax-Span-9" style="font-family: MathJax_Main;">366</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>366</mn></math></span></span><script type="math/tex" id="MathJax-Element-3">366</script> ensembles (les <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;366&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-10" style="width: 1.789em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.491em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1001.43em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-11"><span class="mn" id="MathJax-Span-12" style="font-family: MathJax_Main;">366</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>366</mn></math></span></span><script type="math/tex" id="MathJax-Element-4">366</script> jours de l'année), alors il existe au moins un ensemble qui contient au moins <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-13" style="width: 0.598em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1000.42em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-14"><span class="mn" id="MathJax-Span-15" style="font-family: MathJax_Main;">3</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn></math></span></span><script type="math/tex" id="MathJax-Element-5">3</script> enfants, donc il existe au moins <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-16" style="width: 0.598em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1000.42em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-17"><span class="mn" id="MathJax-Span-18" style="font-family: MathJax_Main;">3</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn></math></span></span><script type="math/tex" id="MathJax-Element-6">3</script> enfants qui ont leur anniversaire le même jour.
+<br>
+<br>Ce nombre est bien minimal, car si l'école contient <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;732&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-19" style="width: 1.789em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.491em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1001.43em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-20"><span class="mn" id="MathJax-Span-21" style="font-family: MathJax_Main;">732</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 1.004em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>732</mn></math></span></span><script type="math/tex" id="MathJax-Element-7">732</script> enfants, alors il est possible que chaque jour soit l'anniversaire d'exactement <span class="MathJax_Preview" style="color: inherit;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" style="position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/math&gt;" role="presentation"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-22" style="width: 0.598em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.479em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.372em, 1000.42em, 2.384em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-23"><span class="mn" id="MathJax-Span-24" style="font-family: MathJax_Main;">2</span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.068em; border-left: 0px solid; width: 0px; height: 0.932em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></span></span><script type="math/tex" id="MathJax-Element-8">2</script> enfants.
+
+  <hr class="bottom-help">
+  <p>Un souci avec cet exercice ? N'hésitez pas à demander de l'aide sur le <a target="_blank" href="https://www.mathraining.be/subjects/100">forum</a> !</p>
+
+<!-- Si étudiant non inscrit -->
+
+
+  </div>
+</div>
+
+<!-- Ajouter quelque chose -->
+
+      <script type="text/javascript">
+var theme_event = new CustomEvent("theme-change");
+
+function setDarkTheme() {
+  document.documentElement.setAttribute('data-bs-theme', 'dark')
+  
+  window.dispatchEvent(theme_event);
+  
+  var date = new Date();
+  date.setTime(date.getTime() + (30*365*24*60*60*1000));
+  var in_long_time = date.toUTCString();
+  document.cookie = "dark_theme=1; Expires="  + in_long_time + "; Path=/; SameSite=Lax";
+}
+
+function setLightTheme() {
+  document.documentElement.setAttribute('data-bs-theme', 'light')
+  
+  window.dispatchEvent(theme_event);
+  
+  document.cookie = 'dark_theme=0; Path=/; SameSite=Lax; Max-Age=-99999999;';  
+}
+</script>
+
+<div class="noprint">
+<footer id="footer" class="d-flex flex-wrap justify-content-between align-items-center pt-1 my-3 border-top">
+  <table style="width:100%;"><tbody><tr>
+    <td style="width:105px; vertical-align:top;">
+      <p class="mb-0">
+      <a class="light-theme-only" href="javascript:setDarkTheme();">Thème sombre</a>
+      <a class="dark-theme-only" href="javascript:setLightTheme();">Thème clair</a>
+      </p>
+    </td>
+    <td style="text-align:right;">
+      <ul class="nav justify-content-end">
+        <li class="nav-item"><a href="https://www.mathraining.be/last_policy">Confidentialité</a></li>
+        <li class="nav-item"><a href="https://www.mathraining.be/about">À propos</a></li>
+        <li class="nav-item"><a href="https://www.mathraining.be/contact">Contact</a></li>
+      </ul>
+    </td>
+  </tr></tbody></table>
+</footer>
+</div>
+
+    </div>
+    
+  
+
+<scribe-shadow id="crxjs-ext" style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; z-index: 2147483647; overflow: visible; visibility: visible;"><template shadowrootmode="open"><div id="root-scribe-elem" style="position: fixed; width: 0px; height: 0px; top: 0px; left: 0px; overflow: visible; color: rgb(15, 23, 42);"><div></div><div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events: none;"><ol tabindex="-1" class="fixed bottom-auto right-0 top-0 z-[10000000] flex max-h-screen min-w-[300px] max-w-[360px] p-4"></ol></div></div><link rel="stylesheet" href="chrome-extension://okfkdaglfjjjfefdcppliegebpoegaii/assets/style.css"></template></scribe-shadow><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Main, sans-serif;"></div></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
