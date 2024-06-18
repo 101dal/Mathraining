@@ -2,6 +2,18 @@ function resetExercice() {
     const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
     container.style.display = "block";
 
+    const currentUrl = window.location.href;
+
+    // Create a URL object from the current URL
+    const url = new URL(currentUrl);
+
+    // Get the value of the 'type' parameter
+    const pageType = url.searchParams.get("type");
+
+    if (pageType !== "5") {
+        return;
+    }
+
     const nodes = Array.from(container.childNodes);
 
     const type = container.querySelector('.ms-2.svg-black-white') ? "check" : "input";
@@ -12,8 +24,29 @@ function resetExercice() {
 
     let ensembleReponse = "" // Used to store the "On demande une réponse entière"
 
-    container.querySelectorAll('.ms-2.svg-black-white').forEach(element => {
-        answers.push(true); // TRUE for correct answers
+    container.querySelectorAll('li.p-1').forEach(element => {
+        const image = element.querySelector("img");
+        let text = "x-mid";
+
+        if (image) {
+            text = image.getAttribute("src");
+        }
+
+        // Clone the parent element and remove the image
+        const parentElement = element.cloneNode(true);
+        const imgElement = parentElement.querySelector('img');
+        if (imgElement) {
+            imgElement.remove();
+        }
+
+        // Get the innerHTML before the image
+        const textElement = parentElement.innerHTML.trim();
+
+        if (text.includes("x-mid") || !text) {
+            answers.push([false, textElement]);
+        } else {
+            answers.push([true, textElement]);
+        }
     });
 
     // Detect the answer and store it
@@ -42,12 +75,11 @@ function resetExercice() {
                         let textAfterSpan = clonedNode.innerHTML.trim();
                         ensembleReponse = textAfterSpan.replace(/[()]/g, "").trim();
 
-
                         isAnswerFound[1] = true;
                     }
                 }
             }
-            removedItems.push(node);
+            removedItems.push(node.cloneNode(true));
             node.remove();
         }
     });
@@ -73,8 +105,8 @@ function resetExercice() {
         `;
         container.insertAdjacentHTML('beforeend', formHtml);
         const form = document.getElementById('new_unsolvedquestion');
-        
-        form.addEventListener('submit', function(event) {
+
+        form.addEventListener('submit', function (event) {
             event.preventDefault();
             const userAnswer = document.getElementById('unsolvedquestion_guess').value.trim();
             const correctAnswer = answers[answers.length - 1]; // Assuming the last answer is the correct one
@@ -84,8 +116,50 @@ function resetExercice() {
                 form.remove();
                 removedItems.forEach(item => {
                     container.appendChild(item);
+                });
 
-                })
+            } else {
+                alert('Incorrect answer. Please try again.');
+            }
+        });
+    }
+
+    // Create the new input for the solution
+    if (type === "check") {
+        const formHtml = `
+            <p class="mt-3 mb-3 fw-bold">Cochez chaque proposition correcte.</p>
+            <form class="new_unsolvedquestion" id="new_unsolvedquestion" action="" accept-charset="UTF-8" method="post">
+                ${answers.map((answer, index) => `
+                    <div class="form-check mb-2">
+                        <label class="form-check-label ms-2">
+                            <input type="checkbox" name="ans[${index}]" value="ok" class="form-check-input to-enable">
+                            ${answer[1]}
+                        </label>
+                    </div>
+                `).join('')}
+                <input type="submit" name="commit" value="Soumettre" class="btn btn-primary to-enable mt-3" data-disable-with="Soumettre">
+            </form>
+        `;
+        container.insertAdjacentHTML('beforeend', formHtml);
+        const form = document.getElementById('new_unsolvedquestion');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const userAnswers = [];
+            form.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
+                userAnswers.push(checkbox.checked);
+            });
+
+            const correctAnswers = answers.map(answer => answer[0]);
+
+            if (JSON.stringify(userAnswers) === JSON.stringify(correctAnswers)) {
+                // Remove the input and display the correct answer
+                form.remove();
+                removedItems.forEach(item => {
+                    container.appendChild(item);
+                });
+
+
             } else {
                 alert('Incorrect answer. Please try again.');
             }
@@ -93,4 +167,8 @@ function resetExercice() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", resetExercice);
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        resetExercice();
+    }, 200);
+})
