@@ -1,3 +1,21 @@
+function addResetBtn(container, exerciseId) {
+    const solvedExercises = JSON.parse(localStorage.getItem('solvedExercises')) || {};
+    const button = document.createElement("button");
+    button.textContent = "Reset"
+    button.classList.add("btn");
+    button.classList.add("btn-primary");
+    button.classList.add("to-enable");
+    button.addEventListener("click", () => {
+        solvedExercises[exerciseId] = false;
+        localStorage.setItem("solvedExercises", JSON.stringify(solvedExercises));
+
+        window.location.reload();
+    });
+    container.appendChild(button);
+
+    return
+}
+
 function resetExercice() {
     const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
     container.style.display = "block";
@@ -14,6 +32,15 @@ function resetExercice() {
         return;
     }
 
+    // Check if the exercise has already been solved and stored in localStorage
+    const exerciseId = url.searchParams.get("which");
+    const solvedExercises = JSON.parse(localStorage.getItem('solvedExercises')) || {};
+
+    if (solvedExercises[exerciseId]) {
+        addResetBtn(container, exerciseId);
+        return;
+    }
+
     const nodes = Array.from(container.childNodes);
 
     const type = container.querySelector('.ms-2.svg-black-white') ? "check" : "input";
@@ -22,7 +49,7 @@ function resetExercice() {
     // List to store the answers
     const answers = [];
 
-    let ensembleReponse = "" // Used to store the "On demande une réponse entière"
+    let ensembleReponse = ""; // Used to store the "On demande une réponse entière"
 
     container.querySelectorAll('li.p-1').forEach(element => {
         const image = element.querySelector("img");
@@ -85,7 +112,7 @@ function resetExercice() {
     });
 
     if (!isAnswerDetected) {
-        alert("THIS EXERCICE HAS NOT BEEN SOLVED YET");
+        alert("THIS EXERCISE HAS NOT BEEN SOLVED YET");
         return;
     }
 
@@ -112,11 +139,17 @@ function resetExercice() {
             const correctAnswer = answers[answers.length - 1]; // Assuming the last answer is the correct one
 
             if (userAnswer === correctAnswer) {
+                // Store the solved exercise in localStorage
+                solvedExercises[exerciseId] = true;
+                localStorage.setItem('solvedExercises', JSON.stringify(solvedExercises));
+
                 // Remove the input and display the correct answer
                 form.remove();
                 removedItems.forEach(item => {
                     container.appendChild(item);
                 });
+
+                addResetBtn(container, exerciseId);
 
             } else {
                 alert('Incorrect answer. Please try again.');
@@ -153,12 +186,17 @@ function resetExercice() {
             const correctAnswers = answers.map(answer => answer[0]);
 
             if (JSON.stringify(userAnswers) === JSON.stringify(correctAnswers)) {
+                // Store the solved exercise in localStorage
+                solvedExercises[exerciseId] = true;
+                localStorage.setItem('solvedExercises', JSON.stringify(solvedExercises));
+
                 // Remove the input and display the correct answer
                 form.remove();
                 removedItems.forEach(item => {
                     container.appendChild(item);
                 });
 
+                addResetBtn(container, exerciseId);
 
             } else {
                 alert('Incorrect answer. Please try again.');
@@ -170,5 +208,5 @@ function resetExercice() {
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         resetExercice();
-    }, 200);
-})
+    }, 1000);
+});
