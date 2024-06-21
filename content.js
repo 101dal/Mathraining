@@ -17,18 +17,9 @@ function addResetBtn(container, exerciseId) {
     return
 }
 
-function resetExercice() {
+function resetExercice(exerciseId, solvedExercises) {
     const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
     container.style.display = "block";
-
-    const currentUrl = window.location.href;
-
-    const url = new URL(currentUrl);
-
-    const pageType = url.searchParams.get("type");
-
-    const exerciseId = url.searchParams.get("which");
-    const solvedExercises = JSON.parse(localStorage.getItem('solvedExercises')) || {};
 
     const nodes = Array.from(container.childNodes);
 
@@ -202,6 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTimeout(() => {
-        resetExercice();
+        resetExercice(exerciseId, solvedExercises);
     }, 1000);
 });
