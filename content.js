@@ -168,6 +168,7 @@ function resetExercice(exerciseId, solvedExercises) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
     // Check if the current page is and exercice
     const currentUrl = window.location.href;
 
@@ -192,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    setTimeout(() => {
+    // setTimeout(() => {
         resetExercice(exerciseId, solvedExercises);
-    }, 1000);
+    // }, 1000);
 });
