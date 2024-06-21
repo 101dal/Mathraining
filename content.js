@@ -1,4 +1,5 @@
 function addResetBtn(container, exerciseId) {
+    // Add the reset button at the end of the exercice
     const solvedExercises = JSON.parse(localStorage.getItem('solvedExercises')) || {};
     const button = document.createElement("button");
     button.textContent = "Reset"
@@ -48,6 +49,7 @@ function resetExercice() {
 
     let ensembleReponse = ""; // Used to store the "On demande une réponse entière"
 
+    // Store the answer and remove it from the user's view
     container.querySelectorAll('li.p-1').forEach(element => {
         const image = element.querySelector("img.ms-2.svg-black-white");
         let text = "x-mid";
@@ -149,7 +151,7 @@ function resetExercice() {
         });
     }
 
-    // Create the new input for the solution
+    // Create the new checkbox for the solution
     if (type === "check") {
         const formHtml = `
             <p class="mt-3 mb-3 fw-bold">Cochez chaque proposition correcte.</p>
@@ -196,7 +198,7 @@ function resetExercice() {
         });
     }
 
-    // Create the new input for the solution
+    // Create the new radio for the solution
     if (type === "single") {
         const formHtml = `
         <p class="mt-3 mb-3 fw-bold">Cochez chaque proposition correcte.</p>
@@ -243,6 +245,7 @@ function resetExercice() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Check if the current page is and exercice
     const currentUrl = window.location.href;
 
     const url = new URL(currentUrl);
@@ -255,6 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+    // Check if the current exercice has already been solved
     const exerciseId = url.searchParams.get("which");
     const solvedExercises = JSON.parse(localStorage.getItem('solvedExercises')) || {};
 
