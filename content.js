@@ -18,7 +18,6 @@ function addResetBtn(container, exerciseId) {
 }
 
 function resetExercice(exerciseId, solvedExercises, container) {
-    const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
     container.style.display = "block";
 
     const nodes = Array.from(container.childNodes);
@@ -168,7 +167,7 @@ function resetExercice(exerciseId, solvedExercises, container) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
     // Check if the current page is and exercice
     const currentUrl = window.location.href;
 
@@ -186,13 +185,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const solvedExercises = JSON.parse(localStorage.getItem('solvedExercises')) || {};
 
     if (solvedExercises[exerciseId]) {
-        const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
         container.style.display = "block";
         addResetBtn(container, exerciseId);
         return;
     }
 
-    // setTimeout(() => {
-    resetExercice(exerciseId, solvedExercises, container);
-    // }, 1000);
+    setTimeout(() => {
+        resetExercice(exerciseId, solvedExercises, container);
+    }, 1000);
 });

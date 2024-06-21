@@ -13,7 +13,6 @@
                 "file:///C:/Users/augus/Desktop/Mathraining/Elements/*"
             ],
             "js": [
-                "MathJax.js",
                 "content.js"
             ],
             "css": [
