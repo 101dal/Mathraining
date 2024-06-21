@@ -22,24 +22,12 @@ function resetExercice() {
 
     const currentUrl = window.location.href;
 
-    // Create a URL object from the current URL
     const url = new URL(currentUrl);
 
-    // Get the value of the 'type' parameter
     const pageType = url.searchParams.get("type");
 
-    if (pageType !== "5") {
-        return;
-    }
-
-    // Check if the exercise has already been solved and stored in localStorage
     const exerciseId = url.searchParams.get("which");
     const solvedExercises = JSON.parse(localStorage.getItem('solvedExercises')) || {};
-
-    if (solvedExercises[exerciseId]) {
-        addResetBtn(container, exerciseId);
-        return;
-    }
 
     const nodes = Array.from(container.childNodes);
 
@@ -255,6 +243,28 @@ function resetExercice() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    const currentUrl = window.location.href;
+
+    const url = new URL(currentUrl);
+
+    const pageType = url.searchParams.get("type");
+
+    if (pageType !== "5") {
+        const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
+        container.style.display = "block";
+        return;
+    }
+
+    const exerciseId = url.searchParams.get("which");
+    const solvedExercises = JSON.parse(localStorage.getItem('solvedExercises')) || {};
+
+    if (solvedExercises[exerciseId]) {
+        const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
+        container.style.display = "block";
+        addResetBtn(container, exerciseId);
+        return;
+    }
+
     setTimeout(() => {
         resetExercice();
     }, 1000);
