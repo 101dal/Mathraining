@@ -18,6 +18,7 @@ function addResetBtn(container, exerciseId) {
 }
 
 function resetExercice(exerciseId, solvedExercises, container) {
+    const container = document.querySelector(".g-col-12.g-col-md-9.g-col-xl-10");
     container.style.display = "block";
 
     const nodes = Array.from(container.childNodes);
