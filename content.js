@@ -43,8 +43,17 @@ function resetExercice() {
 
     const nodes = Array.from(container.childNodes);
 
-    const type = container.querySelector('.ms-2.svg-black-white') ? "check" : "input";
-    console.log(type);
+    const checks = container.querySelectorAll('.ms-2.svg-black-white')
+
+    let type = "input";
+
+    if (!(checks.length === 0)) {
+        if (checks.length > 1) {
+            type = "check";
+        } else {
+            type = "single"
+        }
+    }
 
     // List to store the answers
     const answers = [];
@@ -52,7 +61,7 @@ function resetExercice() {
     let ensembleReponse = ""; // Used to store the "On demande une réponse entière"
 
     container.querySelectorAll('li.p-1').forEach(element => {
-        const image = element.querySelector("img");
+        const image = element.querySelector("img.ms-2.svg-black-white");
         let text = "x-mid";
 
         if (image) {
@@ -61,7 +70,7 @@ function resetExercice() {
 
         // Clone the parent element and remove the image
         const parentElement = element.cloneNode(true);
-        const imgElement = parentElement.querySelector('img');
+        const imgElement = parentElement.querySelector('img.ms-2.svg-black-white');
         if (imgElement) {
             imgElement.remove();
         }
@@ -111,11 +120,6 @@ function resetExercice() {
         }
     });
 
-    if (!isAnswerDetected) {
-        alert("THIS EXERCISE HAS NOT BEEN SOLVED YET");
-        return;
-    }
-
     // Create the new input for the solution
     if (type === "input") {
         const formHtml = `
@@ -127,7 +131,7 @@ function resetExercice() {
                     <label class="form-label to-enable" for="unsolvedquestion_guess">Votre réponse</label>
                     <input class="form-control to-enable ms-1" style="width:70px;" type="text" name="unsolvedquestion[guess]" id="unsolvedquestion_guess">
                 </div>
-                <input type="submit" name="commit" value="Soumettre" class="btn btn-primary to-enable" data-disable-with="Soumettre">
+                <input type="submit" name="commit" value="Soumettre" class="btn btn-primary to-enable">
             </form>
         `;
         container.insertAdjacentHTML('beforeend', formHtml);
@@ -170,7 +174,7 @@ function resetExercice() {
                         </label>
                     </div>
                 `).join('')}
-                <input type="submit" name="commit" value="Soumettre" class="btn btn-primary to-enable mt-3" data-disable-with="Soumettre">
+                <input type="submit" name="commit" value="Soumettre" class="btn btn-primary to-enable mt-3">
             </form>
         `;
         container.insertAdjacentHTML('beforeend', formHtml);
@@ -203,6 +207,51 @@ function resetExercice() {
             }
         });
     }
+
+    // Create the new input for the solution
+    if (type === "single") {
+        const formHtml = `
+        <p class="mt-3 mb-3 fw-bold">Cochez chaque proposition correcte.</p>
+        <form class="new_unsolvedquestion" id="new_unsolvedquestion" action="" accept-charset="UTF-8" method="post">
+            ${answers.map((answer, index) => `
+                <div class="form-check mb-2">
+                    <label class="form-check-label ms-2">
+                        <input type="radio" name="ans" value="${index}" class="form-check-input to-enable">
+                        ${answer[1]}
+                    </label>
+                </div>
+            `).join('')}
+            <input type="submit" name="commit" value="Soumettre" class="btn btn-primary to-enable mt-3">
+        </form>
+    `;
+        container.insertAdjacentHTML('beforeend', formHtml);
+        const form = document.getElementById('new_unsolvedquestion');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const userAnswer = form.querySelector('input[type="radio"]:checked');
+            const userAnswerIndex = userAnswer ? parseInt(userAnswer.value) : -1;
+
+            const correctAnswerIndex = answers.findIndex(answer => answer[0]);
+
+            if (userAnswerIndex === correctAnswerIndex) {
+                // Store the solved exercise in localStorage
+                solvedExercises[exerciseId] = true;
+                localStorage.setItem('solvedExercises', JSON.stringify(solvedExercises));
+
+                // Remove the input and display the correct answer
+                form.remove();
+                removedItems.forEach(item => {
+                    container.appendChild(item);
+                });
+
+                addResetBtn(container, exerciseId);
+            } else {
+                alert('Incorrect answer. Please try again.');
+            }
+        });
+    }
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
